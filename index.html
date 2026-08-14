@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZAVEN — Tienda online de ropa</title>
+  <meta name="description" content="ZAVEN, moda masculina de estética clásica y atemporal. Descubre polos, camisas, pantalones y calzado para construir un estilo sobrio y versátil." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ============================================================
+       LAB DE MEDICIÓN — AQUÍ PEGARÁS TUS INTEGRACIONES
+       1) Google Tag Manager: pega aquí el <script> del contenedor.
+          El <noscript> va inmediatamente después de <body>.
+       2) GA4 directo (si NO usas GTM): pega aquí la Google tag.
+       3) Meta Pixel: pega aquí el código base de Meta.
+       4) TikTok Pixel: déjalo para la etapa final.
+       IMPORTANTE: usa IDs de prueba, no compartas claves privadas.
+       ============================================================ -->
+</head>
+<body>
+  <!-- GTM noscript iría aquí, justo debajo de body. -->
+
+  <div class="promo">ENVÍO A TODO EL PERÚ · CAMBIOS HASTA 7 DÍAS · ASESORÍA PERSONALIZADA</div>
+
+  <header class="site-header">
+    <a class="brand brand-text track-nav" data-nav="logo" href="#inicio" aria-label="ZAVEN inicio">
+      <span class="brand-name">ZAVEN</span>
+      <span class="brand-sub">TIENDA ONLINE DE ROPA</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <div class="nav-group">
+        <button class="nav-trigger" type="button" data-menu="hombre">Hombre <span>⌄</span></button>
+        <div class="submenu">
+          <a class="track-nav" data-nav="menu_hombre_todo" href="#coleccion">Ver todo</a>
+          <a class="track-nav category-link" data-nav="menu_hombre_polos" data-category="polos" href="#coleccion">Polos & tops</a>
+          <a class="track-nav category-link" data-nav="menu_hombre_camisas" data-category="camisas" href="#coleccion">Camisas</a>
+          <a class="track-nav category-link" data-nav="menu_hombre_pantalones" data-category="pantalones" href="#coleccion">Pantalones</a>
+          <a class="track-nav category-link" data-nav="menu_hombre_calzado" data-category="calzado" href="#coleccion">Calzado</a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button class="nav-trigger" type="button" data-menu="colecciones">Colecciones <span>⌄</span></button>
+        <div class="submenu">
+          <a class="track-nav" data-nav="menu_esenciales" href="#coleccion">Esenciales</a>
+          <a class="track-nav" data-nav="menu_nueva_temporada" href="#pasarela">Nueva temporada</a>
+          <a class="track-nav" data-nav="menu_best_sellers" href="#coleccion">Best sellers</a>
+          <a class="track-nav" data-nav="menu_lookbook" href="#pasarela">Lookbook / Pasarela</a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button class="nav-trigger" type="button" data-menu="descubre">Descubre <span>⌄</span></button>
+        <div class="submenu">
+          <a class="track-nav" data-nav="menu_codigo" href="#estilo">El código ZAVEN</a>
+          <a class="track-nav" data-nav="menu_guia_tallas" href="#guia">Guía de tallas</a>
+          <a class="track-nav" data-nav="menu_ubicacion" href="#ubicacion">Ubícanos</a>
+          <a class="track-nav" data-nav="menu_faq" href="#faq">Preguntas frecuentes</a>
+        </div>
+      </div>
+
+      <a class="track-nav" data-nav="asesoria" href="#lead">Asesoría</a>
+      <a class="track-nav" data-nav="contacto" href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="searchBtn" class="header-action" type="button" aria-label="Buscar">Buscar</button>
+      <button id="cartBtn" class="header-action" type="button">Bolsa <span id="cartCount">0</span></button>
+      <button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <aside id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-head"><span>MENÚ</span><button id="mobileMenuClose" type="button">×</button></div>
+    <details><summary>Hombre</summary><a class="category-link track-nav" data-category="polos" data-nav="mobile_polos" href="#coleccion">Polos & tops</a><a class="category-link track-nav" data-category="camisas" data-nav="mobile_camisas" href="#coleccion">Camisas</a><a class="category-link track-nav" data-category="pantalones" data-nav="mobile_pantalones" href="#coleccion">Pantalones</a><a class="category-link track-nav" data-category="calzado" data-nav="mobile_calzado" href="#coleccion">Calzado</a></details>
+    <details><summary>Colecciones</summary><a class="track-nav" data-nav="mobile_esenciales" href="#coleccion">Esenciales</a><a class="track-nav" data-nav="mobile_pasarela" href="#pasarela">Lookbook / Pasarela</a></details>
+    <details><summary>Descubre</summary><a class="track-nav" data-nav="mobile_codigo" href="#estilo">El código ZAVEN</a><a class="track-nav" data-nav="mobile_tallas" href="#guia">Guía de tallas</a><a class="track-nav" data-nav="mobile_ubicacion" href="#ubicacion">Ubícanos</a><a class="track-nav" data-nav="mobile_faq" href="#faq">Preguntas frecuentes</a></details>
+    <a class="track-nav" data-nav="mobile_asesoria" href="#lead">Asesoría</a>
+    <a class="track-nav" data-nav="mobile_contacto" href="#contacto">Contacto</a>
+  </aside>
+
+  <main>
+    <section id="inicio" class="hero">
+      <img src="assets/hero.jpg" alt="Prendas clásicas ZAVEN" />
+      <div class="hero-overlay"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">NUEVA TEMPORADA · LIMA</p>
+        <h1>Elegancia que no necesita explicación.</h1>
+        <p>Prendas sobrias, versátiles y atemporales para construir un guardarropa con intención.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light track-cta" data-cta="hero_coleccion" href="#coleccion">Explorar colección</a>
+          <a class="btn btn-ghost track-cta" data-cta="hero_asesoria" href="#lead">Quiero asesoría</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Beneficios">
+      <div><strong>Envío nacional</strong><span>Seguimiento de pedido</span></div>
+      <div><strong>Pago flexible</strong><span>Tarjetas y medios digitales</span></div>
+      <div><strong>Cambios simples</strong><span>Hasta 7 días</span></div>
+      <div><strong>Asesoría</strong><span>Te ayudamos a elegir tu look</span></div>
+    </section>
+
+    <section id="categorias" class="category-showcase section-pad">
+      <div class="section-head simple"><div><p class="eyebrow">COMPRA POR CATEGORÍA</p><h2>Construye el look.</h2></div></div>
+      <div class="category-grid">
+        <a href="#coleccion" class="category-tile category-link track-cta" data-category="polos" data-cta="category_polos"><span>01</span><h3>Polos & tops</h3><p>Tejidos, cuellos abiertos y básicos elevados.</p></a>
+        <a href="#coleccion" class="category-tile category-link track-cta" data-category="camisas" data-cta="category_camisas"><span>02</span><h3>Camisas</h3><p>Oxford, lino y siluetas limpias.</p></a>
+        <a href="#coleccion" class="category-tile category-link track-cta" data-category="pantalones" data-cta="category_pantalones"><span>03</span><h3>Pantalones</h3><p>Pinzas, rectos y tonos neutros.</p></a>
+        <a href="#coleccion" class="category-tile category-link track-cta" data-category="calzado" data-cta="category_calzado"><span>04</span><h3>Calzado</h3><p>Mocasines y piezas de acabado clásico.</p></a>
+      </div>
+    </section>
+
+    <section id="estilo" class="manifesto section-pad">
+      <p class="eyebrow">EL CÓDIGO ZAVEN</p>
+      <h2>Menos ruido. Más presencia.</h2>
+      <p class="lead">Una propuesta inspirada en la estética clásica masculina: cortes limpios, tonos neutros y piezas fáciles de combinar.</p>
+    </section>
+
+    <section class="split-story section-pad">
+      <div class="story-image"><img src="assets/look.jpg" alt="Look clásico de referencia ZAVEN" /></div>
+      <div class="story-copy">
+        <p class="eyebrow">COLECCIÓN ESENCIAL</p>
+        <h2>Un guardarropa construido para repetir.</h2>
+        <p>Camisas, polos, pantalones y capas ligeras pensadas para combinar entre sí y acompañarte de la mañana a la noche.</p>
+        <a href="#coleccion" class="text-link track-cta" data-cta="story_ver_prendas">Ver prendas →</a>
+      </div>
+    </section>
+
+    <section id="coleccion" class="section-pad products-section">
+      <div class="section-head">
+        <div><p class="eyebrow">LOS MÁS ELEGIDOS</p><h2>Colección esencial</h2></div>
+        <div class="filters" role="group" aria-label="Filtros de producto">
+          <button class="filter active" data-filter="all">Todo</button>
+          <button class="filter" data-filter="polos">Polos</button>
+          <button class="filter" data-filter="camisas">Camisas</button>
+          <button class="filter" data-filter="pantalones">Pantalones</button>
+          <button class="filter" data-filter="calzado">Calzado</button>
+        </div>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section id="pasarela" class="editorial section-pad">
+      <img src="assets/editorial.jpg" alt="Editorial ZAVEN" />
+      <div class="editorial-copy">
+        <p class="eyebrow">LOOKBOOK / PASARELA</p>
+        <h2>Vestir bien también es saber elegir.</h2>
+        <p>Descubre combinaciones sobrias, texturas ligeras y proporciones limpias para construir un estilo que funciona más allá de una sola temporada.</p>
+        <div class="inline-actions"><button id="simulateBtn" class="btn btn-dark" type="button">Descubrir el look</button><a class="text-link track-cta" data-cta="lookbook_shop" href="#coleccion">Comprar el look →</a></div>
+      </div>
+    </section>
+
+    <section id="guia" class="guide-section section-pad">
+      <div><p class="eyebrow">GUÍA DE TALLAS</p><h2>Encuentra tu ajuste.</h2><p>Consulta nuestras medidas de referencia y elige la talla que mejor se adapte a ti.</p></div>
+      <div class="size-grid">
+        <button class="size-card" data-size="S"><strong>S</strong><span>Pecho 88–94 cm</span></button>
+        <button class="size-card" data-size="M"><strong>M</strong><span>Pecho 95–101 cm</span></button>
+        <button class="size-card" data-size="L"><strong>L</strong><span>Pecho 102–108 cm</span></button>
+        <button class="size-card" data-size="XL"><strong>XL</strong><span>Pecho 109–116 cm</span></button>
+      </div>
+    </section>
+
+    <section id="lead" class="lead-section section-pad">
+      <div>
+        <p class="eyebrow">ASESORÍA ZAVEN</p>
+        <h2>Encuentra tu look.</h2>
+        <p>Cuéntanos qué estás buscando y te ayudaremos a construir una combinación acorde a tu estilo.</p>
+      </div>
+      <form id="leadForm" novalidate>
+        <label>Nombre<input required name="name" autocomplete="name" placeholder="Tu nombre" /></label>
+        <label>Correo<input required type="email" name="email" autocomplete="email" placeholder="tu@correo.com" /></label>
+        <label>¿Qué buscas?
+          <select name="interest" required>
+            <option value="">Selecciona</option>
+            <option>Armar un look completo</option>
+            <option>Camisas</option>
+            <option>Polos</option>
+            <option>Pantalones</option>
+          </select>
+        </label>
+        <button class="btn btn-dark" type="submit">Solicitar asesoría</button>
+        <small>Al enviar tu solicitud, verás una confirmación con los siguientes pasos.</small>
+      </form>
+    </section>
+
+    <section id="ubicacion" class="location-section section-pad">
+      <div class="location-card">
+        <p class="eyebrow">UBÍCANOS</p>
+        <h2>Atención ZAVEN</h2>
+        <p>Lima, Perú · atención online y asesoría previa coordinación.</p>
+        <button id="locationBtn" class="btn btn-light" type="button">Ver opciones de atención</button>
+      </div>
+      <div class="map-demo" aria-label="Atención ZAVEN en Lima"><span>Z</span><p>Lima · Perú<br><small>Atención previa coordinación</small></p></div>
+    </section>
+
+    <section id="faq" class="faq-section section-pad">
+      <div class="section-head simple"><div><p class="eyebrow">AYUDA</p><h2>Preguntas frecuentes</h2></div></div>
+      <div class="faq-list">
+        <details data-faq="envios"><summary>¿Hacen envíos a todo el Perú?</summary><p>Sí. Realizamos envíos a Lima y provincias. El tiempo de entrega puede variar según el destino.</p></details>
+        <details data-faq="cambios"><summary>¿Cómo funcionan los cambios?</summary><p>Puedes solicitar un cambio dentro de los 7 días posteriores a la recepción, siempre que la prenda conserve su estado original.</p></details>
+        <details data-faq="tallas"><summary>¿Cómo elijo mi talla?</summary><p>Usa la guía de tallas de esta misma página o solicita asesoría.</p></details>
+        <details data-faq="pagos"><summary>¿Qué medios de pago aceptan?</summary><p>Puedes elegir entre tarjetas y medios de pago digitales disponibles al momento de finalizar tu pedido.</p></details>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact-section section-pad">
+      <div><p class="eyebrow">CONTACTO</p><h2>Conversemos.</h2><p>¿Tienes una consulta sobre pedidos, tallas o colecciones? Escríbenos y cuéntanos cómo podemos ayudarte.</p></div>
+      <form id="contactForm" novalidate>
+        <label>Nombre<input required name="contact_name" placeholder="Tu nombre" /></label>
+        <label>Correo<input required type="email" name="contact_email" placeholder="tu@correo.com" /></label>
+        <label>Motivo<select required name="reason"><option value="">Selecciona</option><option value="pedido">Pedido</option><option value="tallas">Tallas</option><option value="alianzas">Alianzas</option><option value="otro">Otro</option></select></label>
+        <label class="full-field">Mensaje<textarea required name="message" rows="4" placeholder="Escribe tu consulta"></textarea></label>
+        <button class="btn btn-dark" type="submit">Enviar consulta</button>
+      </form>
+    </section>
+
+    <section class="newsletter section-pad">
+      <p class="eyebrow">ZAVEN NOTES</p>
+      <h2>Ideas de estilo, lanzamientos y novedades.</h2>
+      <form id="newsletterForm"><input required type="email" placeholder="Correo electrónico" /><button type="submit">Suscribirme</button></form>
+    </section>
+  </main>
+
+  <footer>
+    <div><a class="brand brand-text footer-brand" href="#inicio"><span class="brand-name">ZAVEN</span><span class="brand-sub">TIENDA ONLINE DE ROPA</span></a><p>Moda masculina clásica, versátil y atemporal.</p></div>
+    <div><strong>Explora</strong><a href="#categorias">Categorías</a><a href="#coleccion">Colección</a><a href="#pasarela">Lookbook</a><a href="#estilo">El código ZAVEN</a></div>
+    <div><strong>Ayuda</strong><a href="#guia">Guía de tallas</a><a href="#ubicacion">Ubícanos</a><a href="#faq">Preguntas frecuentes</a><a href="#contacto">Contacto</a></div>
+    <div><strong>Servicio</strong><a href="#lead">Asesoría de estilo</a><a href="#faq">Envíos y cambios</a><a href="#contacto">Atención al cliente</a><a href="#newsletterForm">ZAVEN Notes</a></div>
+  </footer>
+
+  <aside id="cartDrawer" class="drawer" aria-hidden="true">
+    <button class="drawer-close" id="cartClose" aria-label="Cerrar">×</button>
+    <h3>Tu bolsa</h3><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">S/ 0.00</strong></div>
+    <button id="checkoutBtn" class="btn btn-dark full" type="button">Finalizar compra</button>
+  </aside>
+
+  <aside id="searchDrawer" class="drawer search-drawer" aria-hidden="true">
+    <button class="drawer-close" id="searchClose" aria-label="Cerrar">×</button>
+    <p class="eyebrow">BÚSQUEDA</p><h3>Encuentra una prenda</h3>
+    <form id="searchForm"><input id="searchInput" required placeholder="Ej. camisa, polo, pantalón" /><button class="btn btn-dark full" type="submit">Buscar</button></form>
+    <div id="searchResults" class="search-results"></div>
+  </aside>
+
+  <div id="backdrop" class="backdrop"></div>
+
+  <aside id="debugPanel" class="debug-panel" aria-hidden="true">
+    <div class="debug-head"><strong>Measurement Lab</strong><button id="debugClose">×</button></div>
+    <p>UTM capturados</p><pre id="utmDebug">Sin UTM</pre>
+    <p>Últimos eventos</p><div id="eventLog" class="event-log"></div>
+    <button id="clearLab" class="mini-btn">Limpiar laboratorio</button>
+  </aside>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

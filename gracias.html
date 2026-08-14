@@ -1,0 +1,16 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gracias — ZAVEN</title><link rel="stylesheet" href="styles.css"></head>
+<body class="thanks-page">
+  <main class="thanks-card">
+    <img src="assets/logo.png" alt="ZAVEN">
+    <p class="eyebrow">ASESORÍA ZAVEN</p>
+    <h1>Gracias por escribirnos.</h1>
+    <p>Hemos recibido tu solicitud. Revisa nuestra colección mientras preparamos una recomendación para ti.</p>
+    <a class="btn btn-dark" href="index.html">Volver a ZAVEN</a>
+  </main>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    const utm = JSON.parse(localStorage.getItem('zaven_utm') || '{}');
+    window.dataLayer.push({event:'generate_lead', lead_source:'thank_you_page', ...utm});
+    if (typeof fbq === 'function') fbq('track','Lead');
+  </script>
+</body></html>
