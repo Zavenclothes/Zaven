@@ -64,8 +64,42 @@ document.getElementById('cartBtn').onclick=()=>{openDrawer(drawer);track('view_c
 document.getElementById('cartClose').onclick=closeDrawers;
 document.getElementById('searchBtn').onclick=()=>{openDrawer(searchDrawer);track('search_open')};
 document.getElementById('searchClose').onclick=closeDrawers;backdrop.onclick=()=>{closeDrawers();closeMobile()};
-document.getElementById('checkoutBtn').onclick=()=>{track('begin_checkout',{value:cart.reduce((s,p)=>s+p.price,0),currency:'PEN',items:cart.map(p=>p.id)});toast('Tu selección está lista para continuar')};
+document.getElementById('checkoutBtn').onclick = () => {
+  if (!cart.length) {
+    toast('Tu bolsa está vacía');
+    return;
+  }
+  const total = cart.reduce((s, p) => s + p.price, 0);
 
+  track('begin_checkout', {
+    value: total,
+    currency: 'PEN',
+    items: cart.map(p => p.id)
+  });
+  const transactionId =
+    'ZV-' +
+    new Date().toISOString().replace(/\D/g, '').slice(0, 14) +
+    '-' +
+    Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+  const purchaseData = {
+    transaction_id: transactionId,
+    value: total,
+    currency: 'PEN',
+    items: cart.map(p => ({
+      item_id: p.id,
+      item_name: p.name,
+      price: p.price,
+      quantity: 1
+    }))
+  };
+
+  sessionStorage.setItem(
+    'zaven_purchase',
+    JSON.stringify(purchaseData)
+  );
+
+  location.href = 'gracias-compra.html';
+};
 // Navegación y submenús.
 document.querySelectorAll('.track-nav').forEach(a=>a.addEventListener('click',()=>track('nav_click',{nav_item:a.dataset.nav||a.textContent.trim()})));
 document.querySelectorAll('.nav-trigger').forEach(b=>b.addEventListener('click',()=>track('menu_open',{menu_name:b.dataset.menu})));
