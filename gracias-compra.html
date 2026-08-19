@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W79LW6ML');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gracias por tu compra | ZAVEN</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .box {
+      background: white;
+      padding: 50px;
+      max-width: 600px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .order {
+      margin-top: 25px;
+      font-weight: bold;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 24px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W79LW6ML"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="box">
+    <h1>Gracias por tu compra</h1>
+    <p>Tu pedido ha sido registrado correctamente.</p>
+
+    <div class="order" id="orderId"></div>
+
+    <a href="index.html">Volver a ZAVEN</a>
+  </div>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    const purchaseData = JSON.parse(
+      sessionStorage.getItem('zaven_purchase') || 'null'
+    );
+
+    if (purchaseData) {
+
+      document.getElementById('orderId').textContent =
+        'Pedido: ' + purchaseData.transaction_id;
+
+      const firstItem = purchaseData.items[0];
+
+      window.dataLayer.push({
+        event: 'purchase',
+        transaction_id: purchaseData.transaction_id,
+        value: purchaseData.value,
+        currency: purchaseData.currency,
+
+        item_id: firstItem.item_id,
+        item_name: firstItem.item_name,
+
+        items: purchaseData.items
+      });
+
+      sessionStorage.removeItem('zaven_purchase');
+    }
+  </script>
+
+</body>
+</html>
