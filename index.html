@@ -247,8 +247,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <aside id="cartDrawer" class="drawer" aria-hidden="true">
     <button class="drawer-close" id="cartClose" aria-label="Cerrar">×</button>
-    <h3>Tu bolsa</h3><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">S/ 0.00</strong></div>
-    <button id="checkoutBtn" class="btn btn-dark full" type="button">Finalizar compra</button>
+
+    <h3>Tu bolsa</h3>
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cartTotal">S/ 0.00</strong>
+    </div>
+
+    <button id="checkoutBtn" class="btn btn-dark full" type="button">
+      Finalizar compra
+    </button>
+
+    <!-- PASO 1: ENVÍO -->
+    <div id="shippingStep" style="display:none; margin-top:24px;">
+      <p class="eyebrow">PASO 1 DE 2</p>
+      <h3>Método de envío</h3>
+
+      <label style="display:block; margin:14px 0;">
+        <input type="radio" name="shipping" value="standard">
+        Envío estándar
+      </label>
+
+      <label style="display:block; margin:14px 0;">
+        <input type="radio" name="shipping" value="pickup">
+        Recojo en tienda
+      </label>
+
+      <button id="shippingContinueBtn" class="btn btn-dark full" type="button">
+        Continuar al pago
+      </button>
+    </div>
+
+    <!-- PASO 2: PAGO -->
+    <div id="paymentStep" style="display:none; margin-top:24px;">
+      <p class="eyebrow">PASO 2 DE 2</p>
+      <h3>Método de pago</h3>
+
+      <label style="display:block; margin:14px 0;">
+        <input type="radio" name="payment" value="card">
+        Tarjeta
+      </label>
+
+      <label style="display:block; margin:14px 0;">
+        <input type="radio" name="payment" value="yape_plin">
+        Yape / Plin
+      </label>
+
+      <button id="paymentConfirmBtn" class="btn btn-dark full" type="button">
+        Confirmar compra
+      </button>
+    </div>
   </aside>
 
   <aside id="searchDrawer" class="drawer search-drawer" aria-hidden="true">
