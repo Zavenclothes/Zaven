@@ -56,7 +56,45 @@ grid.addEventListener('click',e=>{
   if(add){const p=products.find(x=>x.id===add.dataset.id);cart.push(p);renderCart();track('add_to_cart',{item_id:p.id,item_name:p.name,value:p.price,currency:'PEN'});toast(`${p.name} agregado`)}
 });
 
-function renderCart(){document.getElementById('cartCount').textContent=cart.length;document.getElementById('cartItems').innerHTML=cart.length?cart.map(p=>`<div class="cart-row"><span>${p.name}</span><strong>S/ ${p.price}.00</strong></div>`).join(''):'<p>Tu bolsa está vacía.</p>';document.getElementById('cartTotal').textContent=`S/ ${cart.reduce((s,p)=>s+p.price,0).toFixed(2)}`}
+function renderCart() {
+  document.getElementById('cartCount').textContent = cart.length;
+  document.getElementById('cartItems').innerHTML = cart.length
+    ? cart.map((p, index) => `
+        <div class="cart-row">
+          <div>
+            <span>${p.name}</span>
+            <small>S/ ${p.price}.00</small>
+          </div>
+
+          <button
+            class="remove-cart-btn"
+            data-index="${index}">
+            Eliminar
+          </button>
+        </div>
+      `).join('')
+    : '<p>Tu bolsa está vacía</p>';
+  const total = cart.reduce((s, p) => s + p.price, 0);
+  document.getElementById('cartTotal').textContent =
+    `S/ ${total}.00`;
+  document.querySelectorAll('.remove-cart-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const index = Number(btn.dataset.index);
+      const product = cart[index];
+
+      track('remove_from_cart', {
+        item_id: product.id,
+        item_name: product.name,
+        value: product.price,
+        currency: 'PEN'
+      });
+      cart.splice(index, 1);
+      renderCart();
+      toast(`${product.name} eliminado de tu bolsa`);
+    });
+  });
+}
+
 const drawer=document.getElementById('cartDrawer'),searchDrawer=document.getElementById('searchDrawer'),backdrop=document.getElementById('backdrop');
 function openDrawer(el){el.classList.add('open');backdrop.classList.add('show');el.setAttribute('aria-hidden','false')}
 function closeDrawers(){[drawer,searchDrawer].forEach(x=>{x.classList.remove('open');x.setAttribute('aria-hidden','true')});backdrop.classList.remove('show')}
